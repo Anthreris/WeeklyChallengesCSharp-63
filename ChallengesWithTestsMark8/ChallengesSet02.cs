@@ -75,20 +75,38 @@ namespace ChallengesWithTestsMark8
             {
                 return 0;
             }
-            if (numbers % 2 == 0)
+            var sumOfEvens = 0;
+
+            for (int i = 0; i < numbers.Length; i++)
             {
-                return numbers.Sum();
+                if (numbers[i] % 2 == 0)
+                {
+                    sumOfEvens += numbers[i];
+                }
             }
+            return sumOfEvens;
         }
 
         public bool IsSumOdd(List<int> numbers)
         {
-            throw new NotImplementedException();
+            if (numbers == null)
+            {
+                return false;
+            }
+
+            return (numbers.Sum() % 2 != 0);
         }
 
         public long CountOfPositiveOddsBelowNumber(long number)
         {
-            throw new NotImplementedException();
+            if (number <= 0)
+            {
+                return 0;
+            }
+            else //still not used?
+            {
+                return number / 2;
+            }
         }
     }
 }
