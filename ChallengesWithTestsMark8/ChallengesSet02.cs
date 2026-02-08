@@ -71,7 +71,14 @@ namespace ChallengesWithTestsMark8
 
         public int SumEvens(int[] numbers)
         {
-            throw new NotImplementedException();
+            if (numbers == null)
+            {
+                return 0;
+            }
+            if (numbers % 2 == 0)
+            {
+                return numbers.Sum();
+            }
         }
 
         public bool IsSumOdd(List<int> numbers)
