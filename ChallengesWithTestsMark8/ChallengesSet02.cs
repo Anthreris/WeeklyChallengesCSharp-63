@@ -11,6 +11,11 @@ namespace ChallengesWithTestsMark8
             return char.IsLetter(c);
         }
 
+        public bool CharacterIsNotALetter(char c)
+        {
+            return char.IsLetter(c);
+        }
+
         public bool CountOfElementsIsEven(string[] vals)
         {
             if (vals.Length % 2 == 0)
