@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ChallengesWithTestsMark8
 {
@@ -7,17 +8,28 @@ namespace ChallengesWithTestsMark8
     {
         public bool CharacterIsALetter(char c)
         {
-            throw new NotImplementedException();
+            return char.IsLetter(c);
         }
 
         public bool CountOfElementsIsEven(string[] vals)
         {
-            throw new NotImplementedException();
+            //string elements = ;
+            //var isEven = string.IsEven;
+            //return isEven;
+            if (vals.Length % 2 == 0)
+            {
+                return true;
+            }
+            else return false;
         }
 
         public bool IsNumberEven(int number)
         {
-            throw new NotImplementedException();
+            if (number % 2 == 0)
+            {
+                return true;
+            }
+            else return false;
         }
 
         public bool IsNumberOdd(int num)
@@ -37,7 +49,12 @@ namespace ChallengesWithTestsMark8
 
         public int Sum(int[] numbers)
         {
-            throw new NotImplementedException();
+            if (numbers == null) 
+            {
+                return 0;
+            } 
+            var sum = numbers.Sum();
+            return sum;
         }
 
         public int SumEvens(int[] numbers)
