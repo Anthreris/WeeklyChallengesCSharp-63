@@ -13,14 +13,11 @@ namespace ChallengesWithTestsMark8
 
         public bool CountOfElementsIsEven(string[] vals)
         {
-            //string elements = ;
-            //var isEven = string.IsEven;
-            //return isEven;
             if (vals.Length % 2 == 0)
             {
                 return true;
             }
-            else return false;
+            return false;
         }
 
         public bool IsNumberEven(int number)
@@ -28,13 +25,17 @@ namespace ChallengesWithTestsMark8
             if (number % 2 == 0)
             {
                 return true;
-            }
-            else return false;
+            } 
+            return false;
         }
 
         public bool IsNumberOdd(int num)
         {
-            throw new NotImplementedException();
+            if (num % 2 != 0)
+            {
+                return true;
+            }
+            return false;
         }
 
         public double SumOfMinAndMax(IEnumerable<double> numbers)
