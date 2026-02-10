@@ -78,22 +78,64 @@ namespace ChallengesWithTestsMark8
 
         public decimal Divide(decimal dividend, decimal divisor)
         {
-            throw new NotImplementedException();
+            if (divisor == 0)
+            {
+                return 0;
+            }
+            return dividend / divisor;
         }
 
         public int LastMinusFirst(int[] nums)
         {
-            throw new NotImplementedException();
+            if (nums == null)
+            {
+                return 0;
+            }
+            return nums[nums.Length - 1] - nums[0];;
         }
 
         public int[] GetOddsBelow100()
         {
-            throw new NotImplementedException();
+            int[] myArray = new int[100];
+            int index = 0;
+            for (int i = 0; i < 100; i++)
+            {
+                if (i % 2 != 0)
+                {
+                    myArray[index] = i;
+                    index++;
+                }
+            }
+            return myArray;
+            // int[] arrayForOdds = new int[100];
+            // int counting = 0;
+            // for (int i = 0; i < 100; i++)
+            // {
+            //     if (i % 2 != 0)
+            //     {
+            //         arrayForOdds[counting] = i;
+            //         counting++;
+            //     }
+            // }
+            // return arrayForOdds;
+            
+            
+            // var oddsList = new List<int>();
+            // for (int i = 0; i < 100; i++)
+            // {
+            //     if (i % 2 != 0)
+            //     {
+            //         list.Add(i);
+            //     }
+            // }
         }
 
         public void ChangeAllElementsToUppercase(string[] words)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < words.Length; i++)
+            {
+                words[i] = words[i].ToUpper();
+            }
         }
     }
 }
