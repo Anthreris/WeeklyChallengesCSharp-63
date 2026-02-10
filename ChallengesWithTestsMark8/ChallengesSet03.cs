@@ -43,17 +43,37 @@ namespace ChallengesWithTestsMark8
 
         public bool PasswordContainsUpperLowerAndNumber(string password)
         {
-            throw new NotImplementedException();
+            bool isUpper = false;
+            bool isLower = false;
+            bool isNumber = false;
+
+            foreach (var letter in password)
+            {
+                if (char.IsUpper(letter))
+                {
+                    isUpper = true;
+                }
+                if (char.IsLower(letter))
+                {
+                    isLower = true;    
+                }
+
+                if (char.IsNumber(letter))
+                {
+                    isNumber = true;
+                }
+            }
+            return isUpper && isLower && isNumber;
         }
 
         public char GetFirstLetterOfString(string val)
         {
-            throw new NotImplementedException();
+            return val[0];
         }
 
         public char GetLastLetterOfString(string val)
         {
-            throw new NotImplementedException();
+            return val[val.Length - 1];
         }
 
         public decimal Divide(decimal dividend, decimal divisor)
