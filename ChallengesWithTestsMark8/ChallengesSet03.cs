@@ -96,6 +96,7 @@ namespace ChallengesWithTestsMark8
 
         public int[] GetOddsBelow100()
         {
+            //Another attempt mimic'd from a video doesn't work? Is my program broken?
             int[] myArray = new int[100];
             int index = 0;
             for (int i = 0; i < 100; i++)
@@ -107,6 +108,9 @@ namespace ChallengesWithTestsMark8
                 }
             }
             return myArray;
+            
+            //My custom challenge attempt is below:
+            
             // int[] arrayForOdds = new int[100];
             // int counting = 0;
             // for (int i = 0; i < 100; i++)
@@ -119,6 +123,8 @@ namespace ChallengesWithTestsMark8
             // }
             // return arrayForOdds;
             
+            
+            //Attempt based on a video
             
             // var oddsList = new List<int>();
             // for (int i = 0; i < 100; i++)
