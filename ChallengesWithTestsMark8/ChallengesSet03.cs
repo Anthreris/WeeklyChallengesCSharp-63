@@ -96,44 +96,29 @@ namespace ChallengesWithTestsMark8
 
         public int[] GetOddsBelow100()
         {
-            //Another attempt mimic'd from a video doesn't work? Is my program broken?
-            int[] myArray = new int[100];
-            int index = 0;
+            var oddsList = new List<int>();
             for (int i = 0; i < 100; i++)
             {
                 if (i % 2 != 0)
                 {
-                    myArray[index] = i;
-                    index++;
+                    oddsList.Add(i);
+                    i++;
                 }
             }
-            return myArray;
-            
-            //My custom challenge attempt is below:
-            
-            // int[] arrayForOdds = new int[100];
-            // int counting = 0;
-            // for (int i = 0; i < 100; i++)
+            return oddsList.ToArray();
+
+            //Still refactoring this version
+            // int[] arrayForOdds
+            // int[] arrayForOdds = new int[];
+            // for (var i = 0; i < 100; i++)
             // {
             //     if (i % 2 != 0)
             //     {
-            //         arrayForOdds[counting] = i;
-            //         counting++;
+            //         arrayForOdds[100] = i;
+            //         i++;
             //     }
             // }
             // return arrayForOdds;
-            
-            
-            //Attempt based on a video
-            
-            // var oddsList = new List<int>();
-            // for (int i = 0; i < 100; i++)
-            // {
-            //     if (i % 2 != 0)
-            //     {
-            //         list.Add(i);
-            //     }
-            // }
         }
 
         public void ChangeAllElementsToUppercase(string[] words)
