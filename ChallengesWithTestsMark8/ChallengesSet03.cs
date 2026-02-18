@@ -107,7 +107,7 @@ namespace ChallengesWithTestsMark8
             }
             return oddsList.ToArray();
 
-            //Still refactoring this version
+            // Still refactoring this version
             // int[] arrayForOdds
             // int[] arrayForOdds = new int[];
             // for (var i = 0; i < 100; i++)
