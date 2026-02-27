@@ -26,20 +26,23 @@ namespace ChallengesWithTestsMark8
         public int GetLengthOfShortestString(string str1, string str2, string str3, string str4)
         {
             // var list = new List<int>(){str1.Length, str2.Length, str3.Length, str4.Length};
-            //
             // return list.Min();
             
-            var shortestLength = str1.Length;
+             var shortestLength = str1.Length;
+             
              if (shortestLength > str2.Length)
              {
                  shortestLength = str2.Length;
-             } if (shortestLength > str3.Length)
+             } 
+             if (shortestLength > str3.Length)
              {
                  shortestLength = str3.Length;
-             } if (shortestLength > str4.Length)
+             } 
+             if (shortestLength > str4.Length)
              {
                  shortestLength = str4.Length;
-             } if  (shortestLength > str1.Length)
+             } 
+             if  (shortestLength > str1.Length)
              {
                  shortestLength = str1.Length;
              }
@@ -48,28 +51,26 @@ namespace ChallengesWithTestsMark8
 
         public int GetSmallestNumber(int number1, int number2, int number3, int number4)
         {
-            // var smallestNumber = number1;
-            // var list = new List<int>() { number1, number2, number3, number4 };
-            //
-            // for(int i = 0; i < list.Count; i++)
-            // {
-            //     
-            // }
-            throw new NotImplementedException();
-            // if (number1 < number2 && number1 < number3 && number1 < number4)
-            // {
-            //     return number1;
-            // } else if (number2 < number1 && number2 < number3 && number2 < number4)
-            // {
-            //     return number2;
-            // } else if (number3 < number1 && number3 < number2 && number3 < number4)
-            // {
-            //     return number3;
-            // } else if (number4 < number1 && number4 < number2 && number4 < number3)
-            // {
-            //     return number4;
-            // }
-            // return number1; //Works but this shouldn't be the return statement
+            var list = new List<int>() { number1, number2, number3, number4 };
+            return list.Min();
+            
+            // Below GetSmallestNumber code doesn't work even after various renditions.
+            
+            //var smallestNumber = number1;
+            //if (smallestNumber > number2) //&& smallestNumber > number3 && smallestNumber > number4)
+            //{
+            //    smallestNumber = number2;
+            //} else if (smallestNumber > number3) //&& smallestNumber > number3 && smallestNumber > number4)
+            //{
+            //    smallestNumber = number3;
+            //} else if (smallestNumber > number4) //&& smallestNumber > number2 && smallestNumber > number4)
+            //{
+            //    smallestNumber = number4;
+            //} else if (smallestNumber > number1) //&& smallestNumber > number2 && smallestNumber > number3)
+            //{
+            //    smallestNumber = number1;
+            //}
+            //return smallestNumber;
         }
 
         public void ChangeBusinessNameTo_TrueCoders(Business biz)
@@ -87,22 +88,74 @@ namespace ChallengesWithTestsMark8
 
         public bool IsStringANumber(string input)
         {
-            throw new NotImplementedException();
+            var isNumber = double.TryParse(input, out double number); //Can't be int due to decimal values
+            
+            return isNumber;
         }
 
         public bool MajorityOfElementsInArrayAreNull(object[] objs)
         {
-            throw new NotImplementedException();
+            var amount = objs.Length;
+            var majorityElements = (amount / 2) + 1;
+            var count = 0;
+
+            foreach (var obj in objs)
+            {
+                if (obj == null)
+                {
+                    count++;
+                }
+            } 
+            if (count >= majorityElements)
+            {
+                return true;
+            } 
+            else
+            {
+                return false;
+            }
         }
 
         public double AverageEvens(int[] numbers)
         {
-            throw new NotImplementedException();
+            double sum = 0;
+            double numberOfEvens = 0;
+            
+            if (numbers == null)
+            {
+                return 0;
+            }
+            foreach (var number in numbers)
+            {
+                if (number % 2 == 0)
+                {
+                    sum += number;
+                    numberOfEvens++;
+                }
+            }
+            if (numberOfEvens > 0)
+            {
+                return sum / numberOfEvens;
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         public int Factorial(int number)
         {
-            throw new NotImplementedException();
+            var fact = 1;
+            
+            if (number < 0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+            for (int i = number; i > 0; i--)
+            {
+                fact = fact * i;
+            }
+            return fact;
         }
     }
 }
