@@ -63,11 +63,19 @@ namespace ChallengesWithTestsMark8
             {
                 return "";
             }
-
-            for (var i = 1; i < words.Length; i++)
+            foreach (string word in words)
             {
-                sentence = words[i];
+                if (word.Trim().Length > 0)
+                {
+                    sentence += word.Trim() + " ";
+                }
             }
+            if (sentence.Length == 0)
+            {
+                return "";
+            }
+            sentence = sentence.Trim();
+            sentence += ".";
             return sentence;
         }
 
