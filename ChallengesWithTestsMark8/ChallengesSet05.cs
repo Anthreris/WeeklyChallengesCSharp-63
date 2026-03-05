@@ -7,27 +7,68 @@ namespace ChallengesWithTestsMark8
     {
         public int GetNextNumberDivisibleByN(int startNumber, int n)
         {
-            throw new NotImplementedException();
+            var finalNumber = (startNumber / n + 1) * n;
+            return finalNumber;
         }
 
         public void ChangeNamesOfBusinessesWithNoRevenueTo_CLOSED(Business[] businesses)
         {
-            throw new NotImplementedException();
+            for (var i = 0; i < businesses.Length; i++)
+            {
+                if (businesses[i].TotalRevenue == 0)
+                {
+                    businesses[i].Name = "CLOSED";
+                }
+            }
         }
 
         public bool IsAscendingOrder(int[] numbers)
         {
-            throw new NotImplementedException();
+            if (numbers == null || numbers.Length == 0)
+            {
+                return false;
+            } 
+            for (var i = 1; i < numbers.Length; i++)
+            {
+                if (numbers[i] < numbers[i - 1])
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         public int SumElementsThatFollowAnEven(int[] numbers)
         {
-            throw new NotImplementedException();
+            int sum = 0;
+            
+            if (numbers == null || numbers.Length == 0)
+            {
+                return 0;
+            }
+            for (var i = 1; i < numbers.Length; i++)
+            {
+                if (numbers[i - 1] % 2 == 0)
+                {
+                    sum += numbers[i];
+                }
+            }
+            return sum;
         }
 
         public string TurnWordsIntoSentence(string[] words)
         {
-            throw new NotImplementedException();
+            string sentence = "";
+            if (words == null || words.Length == 0)
+            {
+                return "";
+            }
+
+            for (var i = 1; i < words.Length; i++)
+            {
+                sentence = words[i];
+            }
+            return sentence;
         }
 
         public double[] GetEveryFourthElement(List<double> elements)
