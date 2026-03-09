@@ -36,6 +36,10 @@ namespace ChallengesWithTestsMark8
                     primeNumber = true;
                 }
             }
+            if (num == 1)
+            {
+                primeNumber = false;
+            }
             if (num == 2 || num == 3)
             {
                 primeNumber = true;
