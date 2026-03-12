@@ -49,17 +49,64 @@ namespace ChallengesWithTestsMark8
 
         public int IndexOfLastUniqueLetter(string str)
         {
-            throw new NotImplementedException();
+            int index = -1;
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                var uniqueIndex = true;
+                
+                for (int x = 0; x < str.Length; x++)
+                {
+                    if (str[i] == str[x] && i != x)
+                    {
+                        uniqueIndex = false;
+                    }
+                }
+
+                if (uniqueIndex == true)
+                {
+                    index = i;
+                }
+            }
+            return index;
         }
 
         public int MaxConsecutiveCount(int[] numbers)
         {
-            throw new NotImplementedException();
+            int consecutiveCount = 0;
+            
+            for (var i = 0; i < numbers.Length; i++)
+            {
+                var countTally = 1;
+
+                for (var x = i + 1; x < numbers.Length; x++)
+                {
+                    if (numbers[i] != numbers[x])
+                    {
+                        break;
+                    }
+                    countTally++;
+                }
+                if (countTally > consecutiveCount)
+                {
+                    consecutiveCount = countTally;
+                }
+            }
+            return consecutiveCount;
         }
 
         public double[] GetEveryNthElement(List<double> elements, int n)
         {
-            throw new NotImplementedException();
+            var nthElements = new List<double>();
+            if (elements == null || n <= 0 || n > elements.Count)
+            {
+                return nthElements.ToArray();
+            }
+            for (var i = n - 1; i < elements.Count; i += n)
+            {
+                nthElements.Add(elements[i]);
+            }
+            return nthElements.ToArray();
         }
     }
 }
